@@ -10,14 +10,15 @@ void main(List<String> arguments) async{
 
   Carts data = Carts.fromJson(res.data);
   int count = 0;
-  int medle = 0;
+  double midle = 0;
   List<Cars> carsMas = data.cars;
   for (var element in carsMas) {
     if(element.car_color == 'Yellow'){
       // print(1);
       count++;
-      String medle = element.price.substring(1);
+      double price = double.parse(element.price.substring(1));
+      midle += price;
     }
   }
-  print(medle/count);
+  print(midle/count);
 }
